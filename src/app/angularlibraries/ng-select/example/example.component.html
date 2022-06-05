@@ -1,0 +1,128 @@
+<!--Using ng-option and for loop-->
+<!-- <ng-select [(ngModel)]="selectedCar">
+    <ng-option *ngFor="let car of cars" [value]="car.id">{{car.name}}</ng-option>
+ </ng-select> -->
+ 
+ <!--Using items input-->
+
+ <h2>[items]</h2>
+ <br>
+ <label class="form-group">[items] example :</label><br>
+ <b>notes: Items array. Default [] </b>
+ <ng-select [items]="cars" 
+            bindLabel="name" 
+            [(ngModel)]="selectedCar">
+ </ng-select><br>
+ 
+ <h2>Bind label</h2>
+ <br>
+ <label class="form-group">Bind label example :</label><br>
+ <b>notes: Object property to use for label. Default label</b>
+ <ng-select [items]="cars" 
+            bindLabel="name" 
+            [(ngModel)]="selectedCar">
+ </ng-select><br>
+<!-- ----------------------------------- -->
+<h2>Bind value</h2>
+<b>notes: Object property to use for selected model. By default binds to whole object.</b>
+ <br>
+<label class="form-group">example of selected model :</label>
+ <ng-select [items]="cars" 
+            bindLabel="name" 
+            bindValue="id" 
+            [(ngModel)]="selectedCar">
+ </ng-select><br>
+ <label class="form-group">example of default binds to whole object:</label>
+ <ng-select [items]="cars" 
+            bindLabel="name" 
+            [(ngModel)]="selectedCar">
+ </ng-select>
+ <h2>{{selectedCar | json}}</h2>
+
+ <!-- ----------------------------------- -->
+<h2>placeholder</h2>
+<b>notes: Placeholder text.</b>
+ <br>
+<label class="form-group">example of placeholder :</label>
+ <ng-select [items]="cars" 
+            bindLabel="name" 
+            bindValue="id" 
+            placeholder="Select a car"
+            [(ngModel)]="selectedCar">
+ </ng-select><br>
+
+  <!-- ----------------------------------- -->
+<h2>[readonly]</h2>
+<b>notes: Set ng-select as readonly. Mostly used with reactive forms..</b>
+ <br>
+<label class="form-group">example of [readonly] :</label>
+ <ng-select [items]="cars" 
+            bindLabel="name" 
+            [readonly]="true"
+            bindValue="id" 
+            placeholder="Select a car"
+            [(ngModel)]="selectedCar">
+ </ng-select><br>
+
+  <!-- ----------------------------------- -->
+<h2>[multiple]</h2>
+<b>notes: Allows to select multiple items.byfault false</b>
+ <br>
+<label class="form-group">example of [multiple] :</label>
+ <ng-select [items]="cars" 
+            bindLabel="name" 
+            [multiple]="true"
+            bindValue="id" 
+            placeholder="Select a car"
+            [(ngModel)]="selectedCar">
+ </ng-select><br>
+
+  <!-- ----------------------------------- -->
+<h2>[hideSelected]</h2>
+<b>notes: Allows to hide selected items..byfault false</b>
+ <br>
+<label class="form-group">example of [hideSelected]:</label>
+ <ng-select [items]="cars" 
+            bindLabel="name" 
+            [multiple]="true"
+            [hideSelected]="true"
+            bindValue="id" 
+            placeholder="Select a car"
+            [(ngModel)]="selectedCar">
+ </ng-select><br>
+
+   <!-- ----------------------------------- -->
+<h2>[clearable]</h2>
+<b>notes: Allow to clear selected value. Default true</b>
+ <br>
+<label class="form-group">example of [clearable]:</label>
+ <ng-select [items]="cars" 
+            bindLabel="name" 
+            [multiple]="true"
+            [hideSelected]="true"
+            [clearable]="false"
+            bindValue="id" 
+            placeholder="Select a car"
+            [(ngModel)]="selectedCar">
+ </ng-select><br>
+ 
+
+  <!-- ----------------------------------- -->
+<h2>[closeOnSelect]	</h2>
+<b>notes: Whether to close the menu when a value is selected. Default true</b>
+ <br>
+<label class="form-group">example of [closeOnSelect]:</label>
+<ng-select [items]="cities" bindLabel="name" bindValue="id" [multiple]="true" placeholder="Select cities"
+	[closeOnSelect]="false" [(ngModel)]="selectedCityIds">
+</ng-select>
+
+
+ <!-- ----------------------------------- -->
+ <h2>[searchable]</h2>
+ <b>notes: Allow to search for value. Default true.</b>
+  <br>
+ <label class="form-group">example of [closeOnSelect]:</label>
+ <ng-select [items]="cities" bindLabel="name" bindValue="id" [multiple]="true" placeholder="Select cities"
+ [searchable]="false" [(ngModel)]="selectedCityIds">
+ </ng-select>
+ 	
