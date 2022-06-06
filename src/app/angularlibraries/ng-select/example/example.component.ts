@@ -30,4 +30,16 @@ export class ExampleComponent implements OnInit {
     ];
     selectedCityIds!: string[];
 
+    cities2 =[];
+    selectedCity:any;
+
+    addCustomUser = (term:any) => ({id: term, name: term});
+
+    selectedUserIds:any;
+
+    users = [
+      {id: 'anjmao', name: 'Anjmao'},
+      {id: 'varnas', name: 'Tadeus Varnas'}
+  ];
+  
 }
