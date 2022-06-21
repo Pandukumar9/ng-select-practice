@@ -1,4 +1,4 @@
-<div class="container" style="padding: 45px;">
+<!-- <div class="container" style="padding: 45px;">
   <div class="row">
     <div class="col-md-6">
       <div class="card">
@@ -16,4 +16,50 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-</div>
+</div> -->
+
+
+<label>Custom templates</label>
+<ng-select [items]="myData"
+           bindLabel="text"
+           bindValue="value"
+           placeholder="Select city"
+           [(ngModel)]="selectedCityName222">
+    <!-- <ng-template ng-header-tmp>
+      Custom header
+    </ng-template> -->
+    <ng-template ng-label-tmp let-item="item">
+        <!-- <img height="15" width="15" [src]="item.avatar"/> -->
+        <img class="md-country-picker-flag" [src]="'https://img.mobiscroll.com/demos/flags/' + item.value + '.png'" />
+        <b>{{item.text}}</b> is cool
+    </ng-template>
+    <ng-template ng-option-tmp let-item="item" let-index="index">
+        <!-- <img height="15" width="15" [src]="item.avatar"/> -->
+        <img class="md-country-picker-flag" [src]="'https://img.mobiscroll.com/demos/flags/' + item.value + '.png'" />
+        
+        <b>{{item.text}}</b>
+    </ng-template>
+    <!-- <ng-template ng-footer-tmp>
+      Custom footer
+    </ng-template> -->
+</ng-select>
+<p>
+    Selected city: {{selectedCityName222 | json}}
+</p>
+<hr />
+<span style="white-space:nowrap">{{selectedCityName222.symbol}}
+  <input matInput type="text" value="1">
+</span>
+
+
+<mat-form-field>
+  <mat-label>Select Country</mat-label>
+  <mat-select (mouseleave)="changebase();convert()" [(ngModel)]="selectedCityName222">
+    <mat-select-trigger><img src='{{selectedCityName222.img}}' width="30" height="30"><span>{{selectedCityName222.viewValue}}</span></mat-select-trigger>
+    <mat-option *ngFor="let con of country" [value]="con">
+      <img src='{{con.img}}' width="30" height="30"> {{con.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<app-skeleton></app-skeleton>

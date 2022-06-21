@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExampleComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }
@@ -41,5 +42,21 @@ export class ExampleComponent implements OnInit {
       {id: 'anjmao', name: 'Anjmao'},
       {id: 'varnas', name: 'Tadeus Varnas'}
   ];
+  selectedCity2:any;
+  cities5 = [
+    {id: 1, name: 'City1'},
+    {id: 2, name: 'City2'},
+    {id: 3, name: 'City3'},
+    {id: 4, name: 'City4'},
+    {id: 5, name: 'City5'}
+    ];
+    
+    CreateNew(city: string){
+    alert("Create New Clicked : "+city)
+    }
   
+    people: any = [];
+    cities4:any[]=[];
+    selectedCityId:any;
+
 }
